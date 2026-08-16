@@ -1,0 +1,18 @@
+[project]
+name = "propag-status"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Viviane",email = "vivigoncalvesporto@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "streamlit (>=1.61.1,<2.0.0)",
+    "pandas (>=3.0.5,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
