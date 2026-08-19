@@ -709,7 +709,10 @@ files = [
 ]
 
 [package.dependencies]
-numpy = {version = ">=2.3.3", markers = "python_version >= \"3.14\""}
+numpy = [
+    {version = ">=1.26.0", markers = "python_version < \"3.14\""},
+    {version = ">=2.3.3", markers = "python_version >= \"3.14\""},
+]
 python-dateutil = ">=2.8.2"
 tzdata = {version = "*", markers = "sys_platform == \"win32\" or sys_platform == \"emscripten\""}
 
@@ -1463,5 +1466,5 @@ files = [
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.14"
-content-hash = "5544fc4bd403cc0907ec99418647ec5c51e009857c278694968ce452cd2436d6"
+python-versions = ">=3.13"
+content-hash = "a5fe0322ec8fc33feec55f88d03bbbad9afe1d2b4cdb75cfaf1a3c647b5970b4"
