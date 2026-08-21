@@ -5,8 +5,10 @@ from etl.transformar import (
     transformar_area_tematica,
     transformar_uo,
     transformar_execucao,
+    transformar_plano_intervencoes,
     transformar_receita,
     transformar_restos_pagar,
+    transformar_valor_a_ser_aplicado,
 )
 
 
@@ -14,6 +16,7 @@ def test_parse_numero_br():
     assert parse_numero_br(" 575.047.787 ") == 575047787.0
     assert parse_numero_br("1.821.457.378,60") == 1821457378.60
     assert parse_numero_br("0,00") == 0.0
+    assert parse_numero_br(" -   ") == 0.0
 
 
 def test_normalizar_sigla():
@@ -70,3 +73,23 @@ def test_receita_so_tem_fonte_89():
     receita = transformar_receita()
     assert (receita["fonte_cod"] == 89).all()
     assert len(receita) == 10
+
+
+def test_todas_uo_do_plano_existem_em_uo():
+    uo = transformar_uo()
+    plano = transformar_plano_intervencoes(uo)
+    sem_match = plano.loc[plano["uo_cod"].isna(), "uo_sigla"].unique()
+    assert plano["uo_cod"].notna().all(), f"uo_sigla sem correspondencia em uo.csv: {sem_match}"
+
+
+def test_valor_a_ser_aplicado_bate_com_plano_v3():
+    uo = transformar_uo()
+    plano_v3 = transformar_plano_intervencoes(uo)
+    plano_v3 = plano_v3[plano_v3["plano"] == "v3"]
+    valor_aplicado = transformar_valor_a_ser_aplicado()
+    limite_total = valor_aplicado.loc[
+        valor_aplicado["descricao"].str.startswith("Valor mínimo a ser aplicado"), "valor"
+    ].sum()
+    # o plano v3 e o total dos dois limites (FEF + Investimentos Proprios) devem
+    # bater dentro de um centavo de arredondamento por linha do plano
+    assert abs(plano_v3["valor_previsto"].sum() - limite_total) < 1.0
