@@ -32,6 +32,6 @@ Dito isso vou explicar um pouco sobre algumas tabelas:
 - area_tematica - auxiliar que vincula a combinação ano + uo + acao a área temática que também vai estar na base propag_plano_intervencoes
 - acao, elemento item, fonte recurso, uo - são bases que trazem os atributos qualitativos vinculados aos códigos e que vai se ligar a tabelas fatos pelos campos de códigos das mesmas. Importante sempre se atentar a questão do ano pois impacta a vinculação e também em alguns casos é preciso ver toda a cadeia ano + uo + acao para sempre combinar as bases de forma correta.
 
-Dito isso, e aproveitando alguns materiais que coloquei na pasta material complementar que são apresentações que foram feitas, e também com base na legislação, nos planos, nas bases, me sugira visuais e monte uma primeira versão de painel para ir atuando sobre ele.
+Dito isso, e aproveitando alguns materiais que coloquei na pasta material_complementar que são apresentações que foram feitas, prestacao_contas (o que foi informado ao tceme e almg no escopo da prestação de contas da execução do 1 semestre de 2026) e também com base na legislação, nos planos, nas bases, me sugira visuais e monte uma primeira versão de painel para ir atuando sobre ele.
 
 
