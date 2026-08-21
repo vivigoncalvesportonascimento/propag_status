@@ -1,0 +1,22 @@
+Quero montar um painel orçamentário usando o streamlit e os dados no meu repositório no GitHub.
+O primeiro passo é o tratamento dos dados.
+Tenho que fazer filtro em todas as bases que trazem a execução completa para trazer apenas dados relativos ao Propag.
+Os filtros que devem ser feitos são:
+- fonte de recursos código ou fonte_cod = 89 - trata-se do marcador orçamentário para informar os recursos do FEF (ver legislação do que se trata)
+- ipu ou ipu_cod = 0 - trata-se do marcado orçamentário das despesas dos investimentos diretos que o Estado tem que fazer com recurso próprio que pode ser para EPT ou para as demais áreas temáticas (transportes, segurança pública, habitação, saneamento, dentre outras)
+No caso da base de receitas, apenas a fonte de recursos 89 importa. No caso das bases de execução, cota, crédito, restos a pagar, tanto o filtro de fonte de recursos quanto o filtro de ipu importa.
+Nas bases data-raw tem bases de dados, como se fossem tabelas fato e tabelas dimensão:
+Tabelas fato
+- cota.csv
+- credito.csv
+- execução.csv
+- receita.csv
+- propag_valor_a_ser_aplicado
+- propag_plano_intervencoes
+Tabelas dimensão
+- acao
+- elemento item
+- fonte recurso
+- uo
+As tabelas fato e dimensão são conectadas pelas colunas de código, exemplo uo_cod que vai conectar a tabela de execução com a tabela de uo. Ponto importante sobre as tabelas dimensão, eles são por ano, porque ao longo dos anos os atributos qualitativos mudaram, uma ação código 4532 pode ter um descritivo em 2008 e outro em 2026 logo é sempre importante verificar na tabela fato qual o ano e só buscar o atributo qualitativo correspondente a partir do código na tabela dimensão na linha que for daquele mesmo ano.
+
