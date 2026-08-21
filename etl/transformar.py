@@ -42,3 +42,33 @@ def transformar_acao() -> pd.DataFrame:
 
 def transformar_area_tematica() -> pd.DataFrame:
     return pd.read_csv(RAW_DIR / "area_tematica.csv", sep=";", encoding="latin-1")
+
+
+def _juntar_dimensoes(df: pd.DataFrame, uo: pd.DataFrame, acao: pd.DataFrame, area_tematica: pd.DataFrame) -> pd.DataFrame:
+    df = df.merge(uo[["ano", "uo_cod", "uo_nome", "uo_sigla", "uo_sigla_current"]], on=["ano", "uo_cod"], how="left")
+    df = df.merge(acao[["ano", "acao_cod", "acao_desc"]], on=["ano", "acao_cod"], how="left")
+    df = df.merge(area_tematica[["ano", "uo_cod", "acao_cod", "area_tematica"]], on=["ano", "uo_cod", "acao_cod"], how="left")
+    return df
+
+
+def transformar_execucao(uo: pd.DataFrame, acao: pd.DataFrame, area_tematica: pd.DataFrame) -> pd.DataFrame:
+    df = pd.read_csv(RAW_DIR / "execucao.csv.gz", compression="gzip")
+    df = filtrar_propag(df)
+    colunas = ["ano", "mes_cod", "uo_cod", "acao_cod", "fonte_cod", "ipu_cod",
+               "categoria_propag", "vlr_empenhado", "vlr_liquidado", "vlr_pago_orcamentario"]
+    df = df[colunas]
+    return _juntar_dimensoes(df, uo, acao, area_tematica)
+
+
+def transformar_restos_pagar(uo: pd.DataFrame, acao: pd.DataFrame, area_tematica: pd.DataFrame) -> pd.DataFrame:
+    df = pd.read_csv(RAW_DIR / "restos_pagar.csv.gz", compression="gzip")
+    df = filtrar_propag(df)
+    colunas = ["ano", "ano_rp", "mes_cod", "uo_cod", "acao_cod", "fonte_cod", "ipu_cod",
+               "categoria_propag", "vlr_despesa_liquidada_rpnp"]
+    df = df[colunas]
+    return _juntar_dimensoes(df, uo, acao, area_tematica)
+
+
+def transformar_receita() -> pd.DataFrame:
+    df = pd.read_csv(RAW_DIR / "receita.csv.gz", compression="gzip")
+    return df[df["fonte_cod"] == 89].copy()
