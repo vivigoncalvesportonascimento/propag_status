@@ -19,3 +19,8 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 package-mode = false
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)"
+]
