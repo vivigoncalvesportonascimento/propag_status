@@ -51,6 +51,13 @@ def test_restos_pagar_sem_sobreposicao_fonte_e_ipu():
     assert not sobreposicao.any()
 
 
+def test_restos_pagar_sem_linhas_orfas_de_dimensao():
+    uo, acao, area = transformar_uo(), transformar_acao(), transformar_area_tematica()
+    restos_pagar = transformar_restos_pagar(uo, acao, area)
+    assert restos_pagar["uo_nome"].notna().all()
+    assert restos_pagar["area_tematica"].notna().all()
+
+
 def test_valor_liquidado_total_positivo():
     uo, acao, area = transformar_uo(), transformar_acao(), transformar_area_tematica()
     execucao = transformar_execucao(uo, acao, area)
