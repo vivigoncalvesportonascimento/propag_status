@@ -388,7 +388,7 @@ git commit -m "Adiciona transformacao do plano de intervencoes e valor a ser apl
   - `carregar_valor_liquidado() -> pd.DataFrame` — columns: `ano, mes_cod, uo_cod, uo_sigla_current, uo_nome, acao_cod, acao_desc, area_tematica, categoria_propag, origem, valor`
   - `formatar_reais(valor: float) -> str` — e.g. `1234567.8 -> "R$ 1.234.567,80"`
   - `obter_limites() -> dict[str, float]` — e.g. `{"FEF": 52964615.72, "Investimentos Próprios": 1821457378.60}`
-  - `CORES_CATEGORIA: dict[str, str]`, `COR_PLANEJADO: str`, `COR_EXECUTADO: str`, `COR_EMPENHADO: str`, `COR_LIQUIDADO: str` — hex colors from the dataviz skill's validated categorical palette (slots 1/2/3: blue `#2a78d6`, orange `#eb6834`, aqua `#1baf7a`)
+  - `COR_PLANEJADO: str`, `COR_EXECUTADO: str`, `COR_EMPENHADO: str`, `COR_LIQUIDADO: str` — hex colors from the dataviz skill's validated categorical palette (slots 1/2/3: blue `#2a78d6`, orange `#eb6834`, aqua `#1baf7a`)
 
 - [ ] **Step 1: Write `utils.py`**
 
@@ -401,10 +401,6 @@ import streamlit as st
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
-CORES_CATEGORIA = {
-    "FEF": "#2a78d6",
-    "Investimentos Próprios": "#eb6834",
-}
 COR_PLANEJADO = "#2a78d6"
 COR_EXECUTADO = "#1baf7a"
 COR_EMPENHADO = "#2a78d6"
@@ -501,7 +497,7 @@ git commit -m "Adiciona utils.py com carregamento cacheado e formatacao de valor
 - Modify: `pyproject.toml` (add `plotly` dependency)
 
 **Interfaces:**
-- Consumes (from `utils.py`, Task 4): `CORES_CATEGORIA`, `COR_EMPENHADO`, `COR_EXECUTADO`, `COR_LIQUIDADO`, `COR_PLANEJADO`, `carregar_execucao`, `carregar_plano_intervencoes`, `carregar_valor_liquidado`, `formatar_reais`, `obter_limites`
+- Consumes (from `utils.py`, Task 4): `COR_EMPENHADO`, `COR_EXECUTADO`, `COR_LIQUIDADO`, `COR_PLANEJADO`, `carregar_execucao`, `carregar_plano_intervencoes`, `carregar_valor_liquidado`, `formatar_reais`, `obter_limites`
 
 - [ ] **Step 1: Add the plotly dependency**
 
