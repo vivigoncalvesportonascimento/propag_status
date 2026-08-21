@@ -1,4 +1,4 @@
-Quero montar um painel orçamentário usando o streamlit e os dados no meu repositório no GitHub.
+Quero montar um painel orçamentário usando o streamlit e os dados no meu repositório no GitHub. O painel tem o objetivo de mostrar informações sobre o Propag.
 O primeiro passo é o tratamento dos dados.
 Tenho que fazer filtro em todas as bases que trazem a execução completa para trazer apenas dados relativos ao Propag.
 Os filtros que devem ser feitos são:
@@ -11,6 +11,7 @@ Tabelas fato
 - credito.csv
 - execução.csv
 - receita.csv
+- restos_pagar.csv
 - propag_valor_a_ser_aplicado
 - propag_plano_intervencoes
 Tabelas dimensão
@@ -18,5 +19,19 @@ Tabelas dimensão
 - elemento item
 - fonte recurso
 - uo
+- area_tematica
 As tabelas fato e dimensão são conectadas pelas colunas de código, exemplo uo_cod que vai conectar a tabela de execução com a tabela de uo. Ponto importante sobre as tabelas dimensão, eles são por ano, porque ao longo dos anos os atributos qualitativos mudaram, uma ação código 4532 pode ter um descritivo em 2008 e outro em 2026 logo é sempre importante verificar na tabela fato qual o ano e só buscar o atributo qualitativo correspondente a partir do código na tabela dimensão na linha que for daquele mesmo ano.
+Dito isso vou explicar um pouco sobre algumas tabelas:
+- receita.csv - traz dados da receita, no qual o importante é saber quanto está sendo previsto e arrecadado da fonte 89 que são os recursos do FEF.
+- execução.csv - traz dados detalhados da execução sejam atributos como o órgão (unidade orçamentaria), ação orçamentaria, credor, e os dados de execução como empenho, liquidação e pagamento. Considerando que no Propag a comprovação do cumprimento das obrigações do ponto de vista orçamentário se dá no estágio da liquidação, a variável de valor mais importante e que deve ser sinalizada com destaque no painel é o valor liquidado (vlr_liquidado). Outra variável importante é o empenho para mostrar como esta o comprometimento das despesas e para verificar o ritmo da execução.
+- credito.csv - traz informações sobre o credito inicial que nasce com a lei orçamentária anual aprovada mas também informações sobre as alterações orçamentárias e o atual crédito disponibilizado para os órgãos que chamamos de credito autorizado.
+- restos pagar.csv - considerando a questão da comprovação pela liquidação da despesa e que vamos ter despesas plurianuais como obras estão sendo computados para fins de comprovação das obrigações do Propag tanto as despesas liquidadas no exercício que são buscadas na base de execução.csv quanto as despesas liquidadas de restos a pagar não processados (rpnp), ou seja, tivemos despesas empenhados em 2025, mas sem liquidação, que foram inscritas como rpnp, para serem liquidadas em 2026. Para auferir a liquidação total para fins de comprovação temos que somar os dois valores dentro dos mesmos campos qualitativos. Então para uma mesma uo, fonte, ipu, para saber o valor aplicado vou somar vlr_liquidado da base execução com o vlr_despesa_liquidada_rpnp da base de restos a pagar. Isso é importante para os quadros resumo que quero que monte com o limite atual x valor liquidado, saldo a liquidar e percentuais.
+- cota.csv - cota é o destaque do credito autorizado que é feito para o órgão poder dar andamento na execução da despesa. A principio não devemos usar esta informação no painel mas futuramente pode ser útil
+- propag_valor_a_ser_aplicado - traz de forma consolidada para 2026 quanto temos que aplicar de investimentos diretos (ipu 0) e quanto temos de aplicar de FEF (fonte 89) para cumprir o exigido no propag. No caso do FEF, a lei permite que a receita seja arrecadada em um exercício e aplicada (despesa realizada) no exercício subsequente. Então temos no caso concreto que MG arrecadou R$52,9 milhões em 2025 e esta aplicando em 2026, logo este é o mínimo que temos que aplicar este ano e é o valor limite que temos que acompanhar. Esta base será importante para os quadros resumos, cards do painel.
+- propag_plano_intervencoes - no escopo do Propag foram elaborados planos de aplicação para trazer como o Estado Planeja executar as despesas. O plano de aplicação de investimentos não tem EPT que tem um plano próprio, mas para fins de fechamento do valor aplicado foi lançada nesta base uma linha de EPT com o valor total previsto para ser executado. De acordo com a lei ate que sejam cumpridas as metas o Estado tem que aplicar 60% dos recursos (ipu 0 e fonte 89) em EPT e o restante pode ser nas áreas temáticas. Mas o Estado tem utilizado uma prerrogativa legal que permite aplicar 30% então atualmente no plano v3 esta sendo esta a repartição. Na tabela tem na coluna plano as 03 versões do plano que também podem ser consultadas no repositório se entender relevante. De toda a forma a principio para o painel basta saber a versão do plano, para qual unidade oraçmentaria esta indo que é o identificador do órgão executor, a área temática, as intervenções e o valor previsto. Ainda não é possível verificar o valor executado por intervenção. Entao para valor executado vamos usar só as tabelas orçamentárias mesmo.
+- area_tematica - auxiliar que vincula a combinação ano + uo + acao a área temática que também vai estar na base propag_plano_intervencoes
+- acao, elemento item, fonte recurso, uo - são bases que trazem os atributos qualitativos vinculados aos códigos e que vai se ligar a tabelas fatos pelos campos de códigos das mesmas. Importante sempre se atentar a questão do ano pois impacta a vinculação e também em alguns casos é preciso ver toda a cadeia ano + uo + acao para sempre combinar as bases de forma correta.
+
+Dito isso, e aproveitando alguns materiais que coloquei na pasta material complementar que são apresentações que foram feitas, e também com base na legislação, nos planos, nas bases, me sugira visuais e monte uma primeira versão de painel para ir atuando sobre ele.
+
 
