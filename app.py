@@ -60,7 +60,7 @@ else:
         color_discrete_map={"Empenhado": COR_EMPENHADO, "Liquidado": COR_LIQUIDADO},
         labels={"mes_cod": "Mês", "Valor": "Valor (R$)"},
     )
-    st.plotly_chart(fig_mensal, use_container_width=True)
+    st.plotly_chart(fig_mensal, width="stretch")
 
 st.divider()
 st.subheader("Planejado (Plano v3) x Executado, por órgão e área temática")
@@ -94,4 +94,5 @@ else:
         color_discrete_map={"Planejado": COR_PLANEJADO, "Executado": COR_EXECUTADO},
         labels={"rotulo": "Órgão — Área temática", "Valor": "Valor (R$)"},
     )
-    st.plotly_chart(fig_comparacao, use_container_width=True)
+    fig_comparacao.update_yaxes(categoryorder="total ascending")
+    st.plotly_chart(fig_comparacao, width="stretch")

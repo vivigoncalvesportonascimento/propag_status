@@ -1,7 +1,7 @@
 # Propag Status
 
 Painel em Streamlit para acompanhar o cumprimento das obrigações do Propag
-(Programa de Acompanamento e Transparência Fiscal) pelo Estado de Minas
+(Programa de Pleno Pagamento de Dívidas dos Estados) pelo Estado de Minas
 Gerais em 2026.
 
 ## Estrutura

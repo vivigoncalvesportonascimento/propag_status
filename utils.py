@@ -67,4 +67,4 @@ def formatar_reais(valor: float) -> str:
 def obter_limites() -> dict[str, float]:
     df = carregar_valor_a_ser_aplicado()
     limites = df[df["descricao"].str.startswith("Valor mínimo a ser aplicado")]
-    return dict(zip(limites["tipo_recurso"], limites["valor"]))
+    return limites.groupby("tipo_recurso")["valor"].sum().to_dict()

@@ -1,7 +1,7 @@
 import plotly.express as px
 import streamlit as st
 
-from utils import carregar_receita, formatar_reais, obter_limites
+from utils import COR_EXECUTADO, COR_PLANEJADO, carregar_receita, formatar_reais, obter_limites
 
 st.set_page_config(page_title="Propag MG — Receita do FEF", layout="wide")
 st.title("Receita do FEF (fonte 89)")
@@ -32,7 +32,7 @@ if mensal_longo.empty:
 else:
     fig = px.bar(
         mensal_longo, x="mes_cod", y="Valor", color="Tipo", barmode="group",
-        color_discrete_map={"Previsto atualizado": "#2a78d6", "Arrecadado": "#1baf7a"},
+        color_discrete_map={"Previsto atualizado": COR_PLANEJADO, "Arrecadado": COR_EXECUTADO},
         labels={"mes_cod": "Mês", "Valor": "Valor (R$)"},
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width="stretch")

@@ -5,8 +5,8 @@ Status: aprovado para geração do plano de implementação
 
 ## Contexto e objetivo
 
-O Estado de Minas Gerais aderiu ao Propag (Programa de Acompanamento e
-Transparência Fiscal), que exige a aplicação de um valor mínimo anual de
+O Estado de Minas Gerais aderiu ao Propag (Programa de Pleno Pagamento de
+Dívidas dos Estados), que exige a aplicação de um valor mínimo anual de
 investimentos com dois marcadores orçamentários:
 
 - **FEF** — `fonte_cod = 89`
