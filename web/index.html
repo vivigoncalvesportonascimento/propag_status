@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propag MG — Painel Web</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-mark">Propag</span>
+      <span class="brand-sub">Minas Gerais &middot; 2026</span>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button class="tab active" data-tab="visao-geral">Visão Geral</button>
+      <button class="tab" data-tab="execucao">Execução por Órgão</button>
+      <button class="tab" data-tab="plano">Plano de Intervenções</button>
+      <button class="tab" data-tab="receita">Receita do FEF</button>
+    </nav>
+  </div>
+</header>
+
+<main id="app">
+  <div class="loading" id="loading">Carregando dados…</div>
+
+  <!-- ===================== VISÃO GERAL ===================== -->
+  <section class="page" id="page-visao-geral">
+    <h1>Visão Geral 2026</h1>
+
+    <div class="cards-row" id="cards-visao-geral"></div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Ritmo de execução mensal</h2>
+        <div class="control">
+          <label for="filtro-categoria-mensal">Categoria</label>
+          <select id="filtro-categoria-mensal">
+            <option value="Todas">Todas</option>
+            <option value="FEF">FEF</option>
+            <option value="Investimentos Próprios">Investimentos Próprios</option>
+          </select>
+        </div>
+      </div>
+      <div id="chart-mensal" class="chart"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Planejado (Plano v3) x Executado, por órgão e área temática</h2>
+        <div class="control">
+          <label for="filtro-area-comparacao">Área temática</label>
+          <select id="filtro-area-comparacao">
+            <option value="Todas">Todas</option>
+          </select>
+        </div>
+      </div>
+      <div id="chart-comparacao" class="chart chart-tall"></div>
+    </div>
+  </section>
+
+  <!-- ===================== EXECUÇÃO ===================== -->
+  <section class="page hidden" id="page-execucao">
+    <h1>Execução por Órgão e Ação</h1>
+
+    <div class="filters-row">
+      <div class="control">
+        <label for="filtro-uo-exec">Órgão (UO)</label>
+        <select id="filtro-uo-exec" multiple size="6"></select>
+      </div>
+      <div class="control">
+        <label for="filtro-area-exec">Área temática</label>
+        <select id="filtro-area-exec" multiple size="6"></select>
+      </div>
+      <div class="control">
+        <label for="filtro-categoria-exec">Categoria Propag</label>
+        <select id="filtro-categoria-exec" multiple size="6"></select>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="table-wrap">
+        <table id="tabela-execucao">
+          <thead>
+            <tr><th>Órgão</th><th>Ação</th><th class="num">Empenhado</th><th class="num">Liquidado</th><th class="num">Saldo</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="hint" id="vazio-execucao" style="display:none">Nenhum dado para os filtros selecionados.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Ranking de órgãos por valor liquidado</h2>
+      <div id="chart-ranking" class="chart chart-tall"></div>
+    </div>
+  </section>
+
+  <!-- ===================== PLANO DE INTERVENÇÕES ===================== -->
+  <section class="page hidden" id="page-plano">
+    <h1>Plano de Intervenções</h1>
+
+    <p class="banner">
+      EPT entra como uma linha única consolidada (tem plano de aplicação próprio, à parte).
+      Ainda não há valor executado por intervenção — apenas o valor planejado.
+    </p>
+
+    <div class="filters-row">
+      <div class="control">
+        <label for="filtro-versao-plano">Versão do plano</label>
+        <select id="filtro-versao-plano"></select>
+      </div>
+      <div class="control">
+        <label for="filtro-area-plano">Área temática</label>
+        <select id="filtro-area-plano" multiple size="6"></select>
+      </div>
+      <div class="control">
+        <label for="filtro-uo-plano">Órgão (UO)</label>
+        <select id="filtro-uo-plano" multiple size="6"></select>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="table-wrap">
+        <table id="tabela-plano">
+          <thead>
+            <tr><th>Área temática</th><th>Órgão</th><th>Intervenção</th><th class="num">Valor previsto</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="hint" id="vazio-plano" style="display:none">Nenhum dado para os filtros selecionados.</p>
+    </div>
+
+    <div class="panel-grid">
+      <div class="panel">
+        <h2>Valor previsto por área temática</h2>
+        <div id="chart-plano-area" class="chart"></div>
+      </div>
+      <div class="panel">
+        <h2>Valor previsto por órgão</h2>
+        <div id="chart-plano-uo" class="chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RECEITA FEF ===================== -->
+  <section class="page hidden" id="page-receita">
+    <h1>Receita do FEF (fonte 89)</h1>
+
+    <p class="banner" id="banner-fef"></p>
+
+    <div class="cards-row" id="cards-receita"></div>
+
+    <div class="panel">
+      <h2>Previsto x Arrecadado, por mês</h2>
+      <div id="chart-receita" class="chart"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  Painel web experimental &middot; mesma lógica de dados do painel Streamlit &middot; dados em <code>data/</code>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
