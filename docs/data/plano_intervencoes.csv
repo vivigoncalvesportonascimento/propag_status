@@ -1,0 +1,113 @@
+plano,area_tematica,uo_sigla,intervencao,valor_previsto,uo_sigla_norm,uo_cod,uo_sigla_current
+v3,Transportes,DER/MG,Conservação rotineira da Malha Viária,575047787.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Reabilitação da malha viária (diversos trechos),149500000.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Implantação/Pavimentação da Malha Viária (diversos trechos),50000000.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Mitigação de danos pontuais nas rodovias,23500000.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Ampliação de Capacidade da Malha Viária (diversos trechos),20000000.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Suporte à Gestão dos Ativos Rodoviários,20000000.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Prevenção e Mitigação de danos ambientais,2000000.0,DERMG,2301,DER-MG
+v3,Transportes,DER/MG,Implantação e restauração de Obras de Artes Especiais,2000000.0,DERMG,2301,DER-MG
+v3,Transportes,FUNTRANS,Regulação do Uso e Ocupação da Faixa de Domínio,1000000.0,FUNTRANS,4381,FUNTRANS
+v3,Transportes,FUNTRANS,Intervenções de Segurança Viária,500000.0,FUNTRANS,4381,FUNTRANS
+v3,Transportes,FUNTRANS,Educação para o Trânsito  Aquisição e fornecimento de equipamentos,50000.0,FUNTRANS,4381,FUNTRANS
+v3,Transportes,SEINFRA,Programa de Doação de Materiais de Infraestrutura Municipal,10016092.0,SEINFRA,1301,SEINFRA
+v3,Transportes,SEINFRA,Fomento a Infraestrutura Municipal por meio de convênios de saída,6000000.0,SEINFRA,1301,SEINFRA
+v3,Transportes,SEINFRA,Pavimentação do acesso ao Presídio de Iturama,3793614.0,SEINFRA,1301,SEINFRA
+v3,Transportes,SEINFRA,Estações MG010,3000000.0,SEINFRA,1301,SEINFRA
+v3,Transportes,SEINFRA,Pavimentação do trecho Paracatu-Entre Ribeiros,2257784.0,SEINFRA,1301,SEINFRA
+v3,Transportes,SEINFRA,Pavimentação do trecho Canápolis,439393.0,SEINFRA,1301,SEINFRA
+v3,Transportes,SEINFRA,Construção de passarela na MG-010 próximo à Cidade Administrativa,393263.0,SEINFRA,1301,SEINFRA
+v3,Habitação,SEINFRA,PAC Ferrugem ,2750223.0,SEINFRA,1301,SEINFRA
+v3,Habitação,SEINFRA,PAC FNHIS ,958711.0,SEINFRA,1301,SEINFRA
+v3,Saneamento,SEINFRA,PAC Riacho das Pedras ,2371788.0,SEINFRA,1301,SEINFRA
+v3,Saneamento,SEINFRA,PAC Encostas ,2246984.0,SEINFRA,1301,SEINFRA
+v3,Segurança Pública,PMMG,Combate ao Crime Organizado,212809746.0,PMMG,1251,PMMG
+v3,Segurança Pública,PMMG,"Renovação, Adequação e Diversificação da Frota Terrestre Operacional",87041907.0,PMMG,1251,PMMG
+v3,Segurança Pública,PMMG,Renovação da Frota de Helicópteros,38000000.0,PMMG,1251,PMMG
+v3,Segurança Pública,PMMG,Estruturação e modernização do parque tecnológico,13730929.0,PMMG,1251,PMMG
+v3,Segurança Pública,PMMG,Projeto COMAF/BOPE,1841679.0,PMMG,1251,PMMG
+v3,Segurança Pública,CBMMG,Aquisição de viaturas,17619500.0,CBMMG,1401,CBMMG
+v3,Segurança Pública,CBMMG,Construção do Hangar de Governador Valadares  do CBMMG,1094541.0,CBMMG,1401,CBMMG
+v3,Segurança Pública,PCMG,Fortalecimento Tecnológico da PCMG,16662980.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,"Renovação da frota, por meio da aquisição de veículos operacionais",13475950.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Aquisição de pistolas calibre 9mm,7500000.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Renovação do Mobiliário das Unidades Policiais (SIPJ),5720020.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Fortalecimento da Cadeia de Custódia,4311396.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Melhoria das Condições de Trabalho - PCMG (SIPJ),4110000.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Modernização tecnológica das Unidades de Inteligência da SPTC,840010.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Fortalecimento da Superintendência de Informações e Inteligência Policial,800541.0,PCMG,1511,PCMG
+v3,Segurança Pública,PCMG,Valorização dos Servidores - Estruturação de espaço de apoio e bem estar,310557.0,PCMG,1511,PCMG
+v3,Segurança Pública,SEJUSP,Aquisição de veículos para modernização da frota do sistema prisional,8400000.0,SEJUSP,1451,SEJUSP
+v3,EPT,SEE,EPT - Educação Profissional Técnica de nível médio,562326599.0,SEE,1261,SEE
+v1,Transportes,DER/MG,Conservação rotineira da Malha Viária,478541359.15,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Implantação/Pavimentação da Malha Viária (diversos trechos),261876784.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Ampliação de Capacidade da Malha Viária (diversos trechos),66348814.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Reabilitação da malha viária (diversos trechos),66289737.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Suporte à Gestão dos Ativos Rodoviários,59506353.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Prevenção e Mitigação de danos ambientais,37900000.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Implantação do Contorno de Andradas,35000000.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Implantação e restauração de Obras de Artes Especiais,21688359.0,DERMG,2301,DER-MG
+v1,Transportes,DER/MG,Mitigação de danos pontuais nas rodovias,20000000.0,DERMG,2301,DER-MG
+v1,Transportes,SEINFRA,Programa de Doação de Materiais de Infraestrutura Municipal,16016092.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Estações MG010,3000000.0,SEINFRA,1301,SEINFRA
+v1,Habitação,SEINFRA,PAC Ferrugem ,2750223.0,SEINFRA,1301,SEINFRA
+v1,Saneamento,SEINFRA,PAC Riacho das Pedras ,2371788.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Pavimentação do trecho Paracatu-Entre Ribeiros,2257784.0,SEINFRA,1301,SEINFRA
+v1,Saneamento,SEINFRA,PAC Encostas ,2246984.0,SEINFRA,1301,SEINFRA
+v1,Habitação,SEINFRA,PAC FNHIS ,2018300.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Pavimentação do trecho Itapagipe a Campina Verde,1653237.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Pavimentação do trecho Jaboticatubas-Lagoa Santa,798959.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Pavimentação do acesso ao Presídio de Iturama,705338.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Construção de passarela na MG-010 próximo à Cidade Administrativa,393263.0,SEINFRA,1301,SEINFRA
+v1,Transportes,SEINFRA,Pavimentação do trecho Consolação-Cambuí,15884.0,SEINFRA,1301,SEINFRA
+v1,Transportes,FUNTRANS,Regulação do Uso e Ocupação da Faixa de Domínio,4104010.0,FUNTRANS,4381,FUNTRANS
+v1,Transportes,FUNTRANS,Intervenções de Segurança Viária,3569738.0,FUNTRANS,4381,FUNTRANS
+v1,Transportes,FUNTRANS,Educação para o Trânsito  Aquisição e fornecimento de equipamentos,60000.0,FUNTRANS,4381,FUNTRANS
+v1,Segurança Pública,PMMG,"Renovação, Adequação e Diversificação da Frota Terrestre Operacional",87041907.0,PMMG,1251,PMMG
+v1,Segurança Pública,PMMG,Renovação da Frota de Helicópteros,36403361.0,PMMG,1251,PMMG
+v1,Segurança Pública,PMMG,Projeto COMAF/BOPE,1841679.0,PMMG,1251,PMMG
+v1,Segurança Pública,CBMMG,Aquisição de viaturas,17619500.0,CBMMG,1401,CBMMG
+v1,Segurança Pública,PCMG,"Renovação da frota, por meio da aquisição de veículos operacionais",13475950.0,PCMG,1511,PCMG
+v1,Segurança Pública,SEJUSP,Aquisição de veículos para modernização da frota do sistema prisional,8400000.0,SEJUSP,1451,SEJUSP
+v1,EPT,SEE,EPT - Educação Profissional Técnica de nível médio,620526592.0,SEE,1261,SEE
+v2,Transportes,DER/MG,Conservação rotineira da Malha Viária,542371770.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Implantação/Pavimentação da Malha Viária (diversos trechos),311876784.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Ampliação de Capacidade da Malha Viária (diversos trechos),168348814.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Reabilitação da malha viária (diversos trechos),203189737.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Suporte à Gestão dos Ativos Rodoviários,59506353.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Prevenção e Mitigação de danos ambientais,37900000.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Implantação do Contorno de Andradas,35000000.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Implantação e restauração de Obras de Artes Especiais,30188359.0,DERMG,2301,DER-MG
+v2,Transportes,DER/MG,Mitigação de danos pontuais nas rodovias,20000000.0,DERMG,2301,DER-MG
+v2,Transportes,SEINFRA,Programa de Doação de Materiais de Infraestrutura Municipal,16016092.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Estações MG010,3000000.0,SEINFRA,1301,SEINFRA
+v2,Habitação,SEINFRA,PAC Ferrugem ,2750223.0,SEINFRA,1301,SEINFRA
+v2,Saneamento,SEINFRA,PAC Riacho das Pedras ,2371788.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Pavimentação do trecho Paracatu-Entre Ribeiros,2257784.0,SEINFRA,1301,SEINFRA
+v2,Saneamento,SEINFRA,PAC Encostas ,2246984.0,SEINFRA,1301,SEINFRA
+v2,Habitação,SEINFRA,PAC FNHIS ,2018300.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Pavimentação do trecho Itapagipe a Campina Verde,1653237.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Pavimentação do trecho Jaboticatubas-Lagoa Santa,798959.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Pavimentação do acesso ao Presídio de Iturama,705338.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Construção de passarela na MG-010 próximo à Cidade Administrativa,393263.0,SEINFRA,1301,SEINFRA
+v2,Transportes,SEINFRA,Pavimentação do trecho Consolação-Cambuí,15884.0,SEINFRA,1301,SEINFRA
+v2,Transportes,FUNTRANS,Regulação do Uso e Ocupação da Faixa de Domínio,4104010.0,FUNTRANS,4381,FUNTRANS
+v2,Transportes,FUNTRANS,Intervenções de Segurança Viária,3569738.0,FUNTRANS,4381,FUNTRANS
+v2,Transportes,FUNTRANS,Educação para o Trânsito  Aquisição e fornecimento de equipamentos,60000.0,FUNTRANS,4381,FUNTRANS
+v2,Segurança Pública,PMMG,"Renovação, Adequação e Diversificação da Frota Terrestre Operacional",87041907.0,PMMG,1251,PMMG
+v2,Segurança Pública,PMMG,Renovação da Frota de Helicópteros,36403361.0,PMMG,1251,PMMG
+v2,Segurança Pública,PMMG,Projeto COMAF/BOPE,1841679.0,PMMG,1251,PMMG
+v2,Segurança Pública,PMMG,Combate ao Crime Organizado,214348616.0,PMMG,1251,PMMG
+v2,Segurança Pública,PMMG,Estruturação e modernização do parque tecnológico,12192060.0,PMMG,1251,PMMG
+v2,Segurança Pública,CBMMG,Aquisição de viaturas,17619500.0,CBMMG,1401,CBMMG
+v2,Segurança Pública,PCMG,"Renovação da frota, por meio da aquisição de veículos operacionais",13475950.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Fortalecimento Tecnológico da PCMG,10023000.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Melhoria das Condições de Trabalho - PCMG (SIPJ),4110000.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Valorização dos Servidores - Estruturação de espaço de apoio e bem estar (copa e refeitório) (SPTC),310557.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Fortalecimento da Superintendência de Informações e Inteligência Policial (SIIP/PCMG),800541.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Fortalecimento da Cadeia de Custódia,4311396.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Aquisição de Comparador Balístico,502979.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Modernização tecnológica das Unidades de Inteligência da SPTC (Workstations + monitores ultrawide),337031.0,PCMG,1511,PCMG
+v2,Segurança Pública,PCMG,Renovação do Mobiliário das Unidades Policiais (SIPJ),12360000.0,PCMG,1511,PCMG
+v2,Segurança Pública,SEJUSP,Aquisição de veículos para modernização da frota do sistema prisional,8400000.0,SEJUSP,1451,SEJUSP
+v2,EPT,SEE,EPT - Educação Profissional Técnica de nível médio,0.0,SEE,1261,SEE

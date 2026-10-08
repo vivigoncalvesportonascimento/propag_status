@@ -10,7 +10,7 @@
  * e subestima o total liquidado em ~6,6%).
  */
 
-const DATA_DIR = "../data/";
+const DATA_DIR = "data/";
 
 const COR = {
   planejado: "#2a78d6",
